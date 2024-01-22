@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\backend;
+namespace App\Http\Controllers\frontend;
 
 use App\Http\Controllers\Controller;
 use App\Models\Category;
@@ -14,16 +14,15 @@ class CategoryController extends Controller
     public function index()
     {
         $data['category'] = Category::All();
-        return view('backend.category.index', $data);
-
+        return view('frontend.home', $data);
     }
 
     /**
      * Show the form for creating a new resource.
      */
     public function create()
-    {        
-        return view('backend.category.create');
+    {
+        //
     }
 
     /**
@@ -31,14 +30,7 @@ class CategoryController extends Controller
      */
     public function store(Request $request)
     {
-        $data = ['name' => $request->category];
-
-        // print_r($data);
-
-        if(Category::insert($data)){
-            return redirect('category')->with('msg', 'Category Added Successfully');
-        }
-
+        //
     }
 
     /**

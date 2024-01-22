@@ -2,6 +2,8 @@
 
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\backend\CategoryController;
+use App\Http\Controllers\frontend\CategoryController as FrontendCategoryController;
+use App\Http\Controllers\frontend\ProductController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
@@ -31,6 +33,9 @@ Route::get('about', function () {
 });
 
 //FRONTEND ROUTE END
+
+// frontend controllers
+Route::get('/', [FrontendCategoryController::class, 'index']) ;
 
 Route::get('/dashboard', function () {
     return view('backend.dashboard');

@@ -30,8 +30,9 @@
                                     <h2 class="categories-toggle"><span>categories</span></h2>
                                 </div>
                                 <div id="cate-toggle" class="category-menu-list">                                      
-                                    <ul>                                        
-                                        <li class="right-menu"><a href="shop-left-sidebar.html">Laptops</a>
+                                    <ul>    
+                                        @foreach($category as $cat)                                    
+                                        {{-- <li class="right-menu"><a href="shop-left-sidebar.html">Laptops</a>
                                             <ul class="cat-mega-menu">
                                                 <li class="right-menu cat-mega-title">
                                                    <a href="shop-left-sidebar.html">Prime Video</a>
@@ -136,9 +137,9 @@
                                                     </ul>
                                                 </li>
                                             </ul>
-                                        </li>
-                                        <li><a href="#">Cameras</a></li>
-                                        <li><a href="#">Headphone</a></li>
+                                        </li> --}}
+                                        <li><a href="#">{{$cat->name}}</a></li>
+                                        {{-- <li><a href="#">Headphone</a></li>
                                         <li><a href="#">Smartwatch</a></li>
                                         <li><a href="#">Out Door Room</a></li>
                                         <li><a href="#">Chamcham</a></li>
@@ -147,7 +148,8 @@
                                         <li class="rx-parent">
                                             <a class="rx-default">More Categories</a>
                                             <a class="rx-show">Less Categories</a>
-                                        </li>
+                                        </li> --}}
+                                        @endforeach
                                     </ul>
                                 </div>
                             </div>
