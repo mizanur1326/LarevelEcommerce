@@ -10,7 +10,7 @@
                     <div class="col-lg-3 col-md-6 col-sm-6 pb-sm-55 pb-xs-55">
                         <div class="li-shipping-inner-box">
                             <div class="shipping-icon">
-                                <img src="{{asset('assets/images/shipping-icon/1.png')}}" alt="Shipping Icon">
+                                <img src="{{asset('frontend/images/shipping-icon/1.png')}}" alt="Shipping Icon">
                             </div>
                             <div class="shipping-text">
                                 <h2>Free Delivery</h2>
@@ -23,7 +23,7 @@
                     <div class="col-lg-3 col-md-6 col-sm-6 pb-sm-55 pb-xs-55">
                         <div class="li-shipping-inner-box">
                             <div class="shipping-icon">
-                                <img src="{{asset('assets/images/shipping-icon/2.png')}}" alt="Shipping Icon">
+                                <img src="{{asset('frontend/images/shipping-icon/2.png')}}" alt="Shipping Icon">
                             </div>
                             <div class="shipping-text">
                                 <h2>Safe Payment</h2>
@@ -36,7 +36,7 @@
                     <div class="col-lg-3 col-md-6 col-sm-6 pb-xs-30">
                         <div class="li-shipping-inner-box">
                             <div class="shipping-icon">
-                                <img src="{{asset('assets/images/shipping-icon/3.png')}}" alt="Shipping Icon">
+                                <img src="{{asset('frontend/images/shipping-icon/3.png')}}" alt="Shipping Icon">
                             </div>
                             <div class="shipping-text">
                                 <h2>Shop with Confidence</h2>
@@ -49,7 +49,7 @@
                     <div class="col-lg-3 col-md-6 col-sm-6 pb-xs-30">
                         <div class="li-shipping-inner-box">
                             <div class="shipping-icon">
-                                <img src="{{asset('assets/images/shipping-icon/4.png')}}" alt="Shipping Icon">
+                                <img src="{{asset('frontend/images/shipping-icon/4.png')}}" alt="Shipping Icon">
                             </div>
                             <div class="shipping-text">
                                 <h2>24/7 Help Center</h2>
@@ -72,7 +72,7 @@
                     <!-- Begin Footer Logo Area -->
                     <div class="col-lg-4 col-md-6">
                         <div class="footer-logo">
-                            <img src="{{asset('assets/images/menu/logo/1.jpg')}}" alt="Footer Logo">
+                            <img src="{{asset('frontend/images/menu/logo/1.jpg')}}" alt="Footer Logo">
                             <p class="info">
                                 We are a team of designers and developers that create high quality HTML Template & Woocommerce, Shopify Theme.
                             </p>
@@ -209,7 +209,7 @@
                     <!-- Begin Footer Payment Area -->
                     <div class="copyright text-center">
                         <a href="#">
-                            <img src="{{asset('assets/images/payment/1.png')}}" alt="">
+                            <img src="{{asset('frontend/images/payment/1.png')}}" alt="">
                         </a>
                     </div>
                     <!-- Footer Payment Area End Here -->
@@ -240,31 +240,31 @@
                         <div class="product-details-left">
                             <div class="product-details-images slider-navigation-1">
                                 <div class="lg-image">
-                                    <img src="{{asset('assets/images/product/large-size/1.jpg')}}" alt="product image">
+                                    <img src="{{asset('frontend/images/product/large-size/1.jpg')}}" alt="product image">
                                 </div>
                                 <div class="lg-image">
-                                    <img src="{{asset('assets/images/product/large-size/2.jpg')}}" alt="product image">
+                                    <img src="{{asset('frontend/images/product/large-size/2.jpg')}}" alt="product image">
                                 </div>
                                 <div class="lg-image">
-                                    <img src="{{asset('assets/images/product/large-size/3.jpg')}}" alt="product image">
+                                    <img src="{{asset('frontend/images/product/large-size/3.jpg')}}" alt="product image">
                                 </div>
                                 <div class="lg-image">
-                                    <img src="{{asset('assets/images/product/large-size/4.jpg')}}" alt="product image">
+                                    <img src="{{asset('frontend/images/product/large-size/4.jpg')}}" alt="product image">
                                 </div>
                                 <div class="lg-image">
-                                    <img src="{{asset('assets/images/product/large-size/5.jpg')}}" alt="product image">
+                                    <img src="{{asset('frontend/images/product/large-size/5.jpg')}}" alt="product image">
                                 </div>
                                 <div class="lg-image">
-                                    <img src="{{asset('assets/images/product/large-size/6.jpg')}}" alt="product image">
+                                    <img src="{{asset('frontend/images/product/large-size/6.jpg')}}" alt="product image">
                                 </div>
                             </div>
                             <div class="product-details-thumbs slider-thumbs-1">                                        
-                                <div class="sm-image"><img src="{{asset('assets/images/product/small-size/1.jpg')}}" alt="product image thumb"></div>
-                                <div class="sm-image"><img src="{{asset('assets/images/product/small-size/2.jpg')}}" alt="product image thumb"></div>
-                                <div class="sm-image"><img src="{{asset('assets/images/product/small-size/3.jpg')}}" alt="product image thumb"></div>
-                                <div class="sm-image"><img src="{{asset('assets/images/product/small-size/4.jpg')}}" alt="product image thumb"></div>
-                                <div class="sm-image"><img src="{{asset('assets/images/product/small-size/5.jpg')}}" alt="product image thumb"></div>
-                                <div class="sm-image"><img src="{{asset('assets/images/product/small-size/6.jpg')}}" alt="product image thumb"></div>
+                                <div class="sm-image"><img src="{{asset('frontend/images/product/small-size/1.jpg')}}" alt="product image thumb"></div>
+                                <div class="sm-image"><img src="{{asset('frontend/images/product/small-size/2.jpg')}}" alt="product image thumb"></div>
+                                <div class="sm-image"><img src="{{asset('frontend/images/product/small-size/3.jpg')}}" alt="product image thumb"></div>
+                                <div class="sm-image"><img src="{{asset('frontend/images/product/small-size/4.jpg')}}" alt="product image thumb"></div>
+                                <div class="sm-image"><img src="{{asset('frontend/images/product/small-size/5.jpg')}}" alt="product image thumb"></div>
+                                <div class="sm-image"><img src="{{asset('frontend/images/product/small-size/6.jpg')}}" alt="product image thumb"></div>
                             </div>
                         </div>
                         <!--// Product Details Left -->

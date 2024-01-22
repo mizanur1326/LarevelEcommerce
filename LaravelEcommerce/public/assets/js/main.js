@@ -1,536 +1,337 @@
-/*--------------------------------------------------
-Template Name: limupa;
-Description: limupa - Digital Products Store ECommerce Bootstrap 4 Template;
-Template URI:;
-Author Name:HasTech;
-Author URI:;
-Version: 1;
-Note: main.js, All Default Scripting Languages For This Theme Included In This File.
------------------------------------------------------
-		CSS INDEX
-		================
-		01. Li's Meanmenu
-		02. Header Dropdown
-		03. Li's Sticky Menu Activation
-		04. Nice Select
-		05. Main Slider Activision
-		06. Li's Product Activision
-		07. Li's Product Activision
-		08. Countdown
-		09. Tooltip Active
-		10. Scroll Up
-		11. Category Menu
-		12. Li's Product Activision
-		13. FAQ Accordion
-		14. Toggle Function Active
-		15. Li's Blog Gallery Slider
-		16. Counter Js
-		17. Price slider
-		18. Category menu Activation
-		19. Featured Product active
-		20. Featured Product 2 active
-		21. Modal Menu Active
-		22. Cart Plus Minus Button
-		23. Single Prduct Carousel Activision
-		24. Star Rating Js
-		25. Zoom Product Venobox
-		26. WOW
+/**
+* Template Name: NiceAdmin
+* Updated: Nov 17 2023 with Bootstrap v5.3.2
+* Template URL: https://bootstrapmade.com/nice-admin-bootstrap-admin-html-template/
+* Author: BootstrapMade.com
+* License: https://bootstrapmade.com/license/
+*/
+(function() {
+  "use strict";
 
------------------------------------------------------------------------------------*/
-(function ($) {
-	"use Strict";
-/*----------------------------------------*/
-/* 	01. Li's Meanmenu
-/*----------------------------------------*/
-    jQuery('.hb-menu nav').meanmenu({
-        meanMenuContainer: '.mobile-menu',
-        meanScreenWidth: "991"
-    })
- /*----------------------------------------*/
- /*  02. Header Dropdown
- /*----------------------------------------*/
- 	// Li's Dropdown Menu
- 	$('.ht-setting-trigger, .ht-currency-trigger, .ht-language-trigger, .hm-minicart-trigger, .cw-sub-menu').on('click', function (e) {
- 		e.preventDefault();
- 		$(this).toggleClass('is-active');
- 		$(this).siblings('.ht-setting, .ht-currency, .ht-language, .minicart, .cw-sub-menu li').slideToggle();
- 	});
- 	$('.ht-setting-trigger.is-active').siblings('.catmenu-body').slideDown();
-/*----------------------------------------*/
-/* 03. Li's Sticky Menu Activation
-/*----------------------------------------*/
-	$(window).on('scroll',function() {
-		if ($(this).scrollTop() > 300) {
-			$('.header-sticky').addClass("sticky");
-		} else {
-			$('.header-sticky').removeClass("sticky");
-		}
-	});
-/*----------------------------------------*/
-/*  04. Nice Select
-/*----------------------------------------*/
-	$(document).ready(function() {
-		$('.nice-select').niceSelect();
-	});
-/*----------------------------------------*/
-/* 05. Main Slider Activision
-/*----------------------------------------*/
-	$(".slider-active").owlCarousel({
-		loop: true,
-		margin: 0,
-		nav: true,
-		autoplay: true,
-		items: 1,
-		autoplayTimeout: 10000,
-		navText: ["<i class='fa fa-angle-left'></i>", "<i class='fa fa-angle-right'></i>"],
-		dots: true,
-		autoHeight: true,
-		lazyLoad: true
-	});
-/*----------------------------------------*/
-/* 06. Li's Product Activision
-/*----------------------------------------*/
-	$(".product-active").owlCarousel({
-		loop: true,
-		nav: true,
-		dots: false,
-		autoplay: false,
-		autoplayTimeout: 5000,
-		navText: ["<i class='fa fa-angle-left'></i>", "<i class='fa fa-angle-right'></i>"],
-		item: 5,
-		responsive: {
-			0: {
-					items: 1
-			},
-			480: {
-					items: 2
-			},
-			768: {
-					items: 3
-			},
-			992: {
-					items: 4
-			},
-			1200: {
-					items: 5
-			}
-		}
-	});
-/*----------------------------------------*/
-/* 07. Li's Product Activision
-/*----------------------------------------*/
-	$(".special-product-active").owlCarousel({
-		loop: true,
-		nav: false,
-		dots: false,
-		autoplay: false,
-		autoplayTimeout: 5000,
-		navText: ['<i class="fa fa-angle-left"></i>', '<i class="fa fa-angle-left"></i>'],
-		item: 4,
-		responsive: {
-			0: {
-					items: 1
-			},
-			480: {
-					items: 1
-			},
-			768: {
-					items: 2
-			},
-			992: {
-					items: 3
-			},
-			1200: {
-					items: 4
-			}
-		}
-	});
-/*----------------------------------------*/
-/* 08. Countdown
-/*----------------------------------------*/
-   $(".li-countdown")
-     .countdown("2019/12/01", function(event) {
-       $(this).html(
-         event.strftime('<div class="count">%D <span>Days:</span></div> <div class="count">%H <span>Hours:</span></div> <div class="count">%M <span>Mins:</span></div><div class="count"> %S <span>Secs</span></div>')
-       );
-     });
-/*----------------------------------------*/
-/* 09. Tooltip Active
-/*----------------------------------------*/
-	$('.product-action a, .social-link a').tooltip({
-		animated: 'fade',
-		placement: 'top',
-		container: 'body'
-	});
-/*----------------------------------------*/
-/* 10. Scroll Up
-/*----------------------------------------*/
-	$.scrollUp({
-		scrollText: '<i class="fa fa-angle-double-up"></i>',
-		easingType: 'linear',
-		scrollSpeed: 900
-	});
-/*----------------------------------------*/
-/* 11. Category Menu
-/*----------------------------------------*/
-	 $('.rx-parent').on('click', function(){
-	    $('.rx-child').slideToggle();
-	    $(this).toggleClass('rx-change');
-	});
-	//    category heading
-	$('.category-heading').on('click', function(){
-	    $('.category-menu-list').slideToggle(300);
-	});	
-	/*-- Category Menu Toggles --*/
-	function categorySubMenuToggle() {
-	    var screenSize = $(window).width();
-	    if ( screenSize <= 991) {
-	        $('#cate-toggle .right-menu > a').prepend('<i class="expand menu-expand"></i>');
-	        $('.category-menu .right-menu ul').slideUp();
-	//        $('.category-menu .menu-item-has-children i').on('click', function(e){
-	//            e.preventDefault();
-	//            $(this).toggleClass('expand');
-	//            $(this).siblings('ul').css('transition', 'none').slideToggle();
-	//        })
-	    } else {
-	        $('.category-menu .right-menu > a i').remove();
-	        $('.category-menu .right-menu ul').slideDown();
-	    }
-	}
-	categorySubMenuToggle();
-	$(window).resize(categorySubMenuToggle);
-
-	/*-- Category Sub Menu --*/
-	function categoryMenuHide(){
-	    var screenSize = $(window).width();
-	    if ( screenSize <= 991) {
-	        $('.category-menu-list').hide();
-	    } else {
-	        $('.category-menu-list').show();
-	    }
-	}
-	categoryMenuHide();
-	$(window).resize(categoryMenuHide);
-	$('.category-menu-hidden').find('.category-menu-list').hide();
-	$('.category-menu-list').on('click', 'li a, li a .menu-expand', function(e) {
-	    var $a = $(this).hasClass('menu-expand') ? $(this).parent() : $(this);
-	    if ($a.parent().hasClass('right-menu')) {
-	        if ($a.attr('href') === '#' || $(this).hasClass('menu-expand')) {
-	            if ($a.siblings('ul:visible').length > 0) $a.siblings('ul').slideUp();
-	            else {
-	                $(this).parents('li').siblings('li').find('ul:visible').slideUp();
-	                $a.siblings('ul').slideDown();
-	            }
-	        }
-	    }
-	    if ($(this).hasClass('menu-expand') || $a.attr('href') === '#') {
-	        e.preventDefault();
-	        return false;
-	    }
-	});
-/*----------------------------------------*/
-/* 12. Li's Product Activision
-/*----------------------------------------*/
-	$(".li-featured-product-active").owlCarousel({
-		loop: true,
-		nav: false,
-		dots: false,
-		margin: 30,
-		autoplay: false,
-		autoplayTimeout: 5000,
-		navText: ['<i class="fa fa-angle-left"></i>', '<i class="fa fa-angle-left"></i>'],
-		item: 2,
-		responsive: {
-			0: {
-				items: 1
-			},
-			480: {
-				items: 2
-			},
-			768: {
-				items: 2
-			},
-			992: {
-				items: 2
-			},
-			1200: {
-				items: 2
-			}
-		 }
-	 });
-/*----------------------------------------*/
-/* 13. FAQ Accordion
-/*----------------------------------------*/
-	$('.card-header a').on('click', function() {
-		 $('.card').removeClass('actives');
-		 $(this).parents('.card').addClass('actives');
-	});
-/*----------------------------------------*/
-/* 14. Toggle Function Active
-/*----------------------------------------*/ 
-	// showlogin toggle
-		$('#showlogin').on('click', function() {
-				$('#checkout-login').slideToggle(900);
-		});
-	// showlogin toggle
-		$('#showcoupon').on('click', function() {
-				$('#checkout_coupon').slideToggle(900);
-		});
-	// showlogin toggle
-		$('#cbox').on('click', function() {
-				$('#cbox-info').slideToggle(900);
-		});
-
-	// showlogin toggle
-		$('#ship-box').on('click', function() {
-				$('#ship-box-info').slideToggle(1000);
-		});
-/*----------------------------------------*/
-/* 15. Li's Blog Gallery Slider
-/*----------------------------------------*/ 
-	var gallery = $('.li-blog-gallery-slider');
-	gallery.slick({
-		arrows: false,
-		autoplay: true,
-		autoplaySpeed: 5000,
-		pauseOnFocus: false,
-		pauseOnHover: false,
-		fade: true,
-		dots: true,
-		infinite: true,
-		slidesToShow: 1,
-		responsive: [
-			{
-				breakpoint: 768,
-					settings: {
-						arrows: false,
-				}
-			},
-		]
-	});
-/*----------------------------------------*/
-/* 16. Counter Js
-/*----------------------------------------*/
-    $('.counter').counterUp({
-        delay: 10,
-        time: 1000
-    });
-/*----------------------------------------*/
-/* 17. Price slider
-/*----------------------------------------*/
- var sliderrange = $('#slider-range');
- var amountprice = $('#amount');
- $(function() {
-     sliderrange.slider({
-         range: true,
-         min: 0,
-         max: 1200,
-         values: [300, 800],
-         slide: function(event, ui) {
-             amountprice.val("$" + ui.values[0] + " - $" + ui.values[1]);
-         }
-     });
-     amountprice.val("$" + sliderrange.slider("values", 0) +
-         " - $" + sliderrange.slider("values", 1));
- });
- /*----------------------------------------*/
- /* 18. Category menu Activation
- /*----------------------------------------*/
- $('.category-sub-menu li.has-sub > a').on('click', function () {
-     $(this).removeAttr('href');
-     var element = $(this).parent('li');
-     if (element.hasClass('open')) {
-         element.removeClass('open');
-         element.find('li').removeClass('open');
-         element.find('ul').slideUp();
-     } else {
-         element.addClass('open');
-         element.children('ul').slideDown();
-         element.siblings('li').children('ul').slideUp();
-         element.siblings('li').removeClass('open');
-         element.siblings('li').find('li').removeClass('open');
-         element.siblings('li').find('ul').slideUp();
-     }
- });
- /*----------------------------------------*/
- /* 19. Featured Product active
- /*----------------------------------------*/
- $('.featured-product-active').owlCarousel({
-     loop: true,
-     nav: true,
-     autoplay: false,
-     autoplayTimeout: 5000,
-     navText: ['<i class="ion-ios-arrow-back"></i>', '<i class="ion-ios-arrow-forward"></i>'],
-     item: 3,
-     responsive: {
-        0: {
-            items: 1
-        },
-        768: {
-            items: 2
-        },
-        992: {
-            items: 2
-        },
-        1100: {
-            items: 2
-        },
-        1200: {
-            items: 2
-        }
-    }
- })
-/*----------------------------------------*/
-/* 20. Featured Product 2 active
-/*----------------------------------------*/
- $('.featured-product-active-2').owlCarousel({
-     loop: true,
-     nav: true,
-     autoplay: false,
-     autoplayTimeout: 5000,
-     navText: ['<i class="ion-ios-arrow-back"></i>', '<i class="ion-ios-arrow-forward"></i>'],
-     item: 3,
-     responsive: {
-        0: {
-            items: 1
-        },
-        768: {
-            items: 2
-        },
-        992: {
-            items: 1
-        },
-        1100: {
-            items: 1
-        },
-        1200: {
-            items: 1
-        }
-    }
- })
- /*----------------------------------------*/
- /* 21. Modal Menu Active
- /*----------------------------------------*/ 
- $('.product-details-images').each(function(){
-     var $this = $(this);
-     var $thumb = $this.siblings('.product-details-thumbs, .tab-style-left');
-     $this.slick({
-        arrows: false,
-        slidesToShow: 1,
-        slidesToScroll: 1,
-        autoplay: false,
-        autoplaySpeed: 5000,
-        dots: false,
-        infinite: true,
-        centerMode: false,
-        centerPadding: 0,
-        asNavFor: $thumb,
-    });
- });
- $('.product-details-thumbs').each(function(){
-     var $this = $(this);
-     var $details = $this.siblings('.product-details-images');
-     $this.slick({
-        slidesToShow: 4,
-        slidesToScroll: 1,
-        autoplay: false,
-        autoplaySpeed: 5000,
-        dots: false,
-        infinite: true,
-        focusOnSelect: true,
-        centerMode: true,
-        centerPadding: 0,
-        prevArrow: '<span class="slick-prev"><i class="fa fa-angle-left"></i></span>',
-        nextArrow: '<span class="slick-next"><i class="fa fa-angle-right"></i></span>',
-        asNavFor: $details,
-    });
- });
- $('.tab-style-left, .tab-style-right').each(function(){
-     var $this = $(this);
-     var $details = $this.siblings('.product-details-images');
-     $this.slick({
-        slidesToShow: 3,
-        slidesToScroll: 1,
-        autoplay: false,
-        autoplaySpeed: 5000,
-        dots: false,
-        infinite: true,
-        focusOnSelect: true,
-        vertical: true,
-        centerPadding: 0,
-        prevArrow: '<span class="slick-prev"><i class="fa fa-angle-down"></i></span>',
-        nextArrow: '<span class="slick-next"><i class="fa fa-angle-up"></i></span>',
-        asNavFor: $details,
-    });
- });
-/*----------------------------------------*/
-/* 22. Cart Plus Minus Button
-/*----------------------------------------*/
- $(".cart-plus-minus").append('<div class="dec qtybutton"><i class="fa fa-angle-down"></i></div><div class="inc qtybutton"><i class="fa fa-angle-up"></i></div>');
- $(".qtybutton").on("click", function() {
-    var $button = $(this);
-    var oldValue = $button.parent().find("input").val();
-    if ($button.hasClass('inc')) {
-       var newVal = parseFloat(oldValue) + 1;
+  /**
+   * Easy selector helper function
+   */
+  const select = (el, all = false) => {
+    el = el.trim()
+    if (all) {
+      return [...document.querySelectorAll(el)]
     } else {
-        // Don't allow decrementing below zero
-       if (oldValue > 0) {
-         var newVal = parseFloat(oldValue) - 1;
-         } else {
-         newVal = 0;
-       }
-       }
-    $button.parent().find("input").val(newVal);
-   });
-/*----------------------------------------*/
-/* 23. Single Prduct Carousel Activision
-/*----------------------------------------*/
- 	$(".sp-carousel-active").owlCarousel({
- 		loop: true,
- 		nav: false,
- 		dots: false,
- 		autoplay: false,
- 		autoplayTimeout: 5000,
- 		navText: ['<i class="fa fa-angle-left"></i>', '<i class="fa fa-angle-left"></i>'],
- 		item: 4,
- 		responsive: {
- 			0: {
- 					items: 1
- 			},
- 			480: {
- 					items: 2
- 			},
- 			768: {
- 					items: 2
- 			},
- 			992: {
- 					items: 3
- 			},
- 			1200: {
- 					items: 4
- 			}
- 		}
- 	});
-/*----------------------------------------*/
-/* 24. Star Rating Js
-/*----------------------------------------*/
-    $(function() {
-          $('.star-rating').barrating({
-            theme: 'fontawesome-stars'
+      return document.querySelector(el)
+    }
+  }
+
+  /**
+   * Easy event listener function
+   */
+  const on = (type, el, listener, all = false) => {
+    if (all) {
+      select(el, all).forEach(e => e.addEventListener(type, listener))
+    } else {
+      select(el, all).addEventListener(type, listener)
+    }
+  }
+
+  /**
+   * Easy on scroll event listener 
+   */
+  const onscroll = (el, listener) => {
+    el.addEventListener('scroll', listener)
+  }
+
+  /**
+   * Sidebar toggle
+   */
+  if (select('.toggle-sidebar-btn')) {
+    on('click', '.toggle-sidebar-btn', function(e) {
+      select('body').classList.toggle('toggle-sidebar')
+    })
+  }
+
+  /**
+   * Search bar toggle
+   */
+  if (select('.search-bar-toggle')) {
+    on('click', '.search-bar-toggle', function(e) {
+      select('.search-bar').classList.toggle('search-bar-show')
+    })
+  }
+
+  /**
+   * Navbar links active state on scroll
+   */
+  let navbarlinks = select('#navbar .scrollto', true)
+  const navbarlinksActive = () => {
+    let position = window.scrollY + 200
+    navbarlinks.forEach(navbarlink => {
+      if (!navbarlink.hash) return
+      let section = select(navbarlink.hash)
+      if (!section) return
+      if (position >= section.offsetTop && position <= (section.offsetTop + section.offsetHeight)) {
+        navbarlink.classList.add('active')
+      } else {
+        navbarlink.classList.remove('active')
+      }
+    })
+  }
+  window.addEventListener('load', navbarlinksActive)
+  onscroll(document, navbarlinksActive)
+
+  /**
+   * Toggle .header-scrolled class to #header when page is scrolled
+   */
+  let selectHeader = select('#header')
+  if (selectHeader) {
+    const headerScrolled = () => {
+      if (window.scrollY > 100) {
+        selectHeader.classList.add('header-scrolled')
+      } else {
+        selectHeader.classList.remove('header-scrolled')
+      }
+    }
+    window.addEventListener('load', headerScrolled)
+    onscroll(document, headerScrolled)
+  }
+
+  /**
+   * Back to top button
+   */
+  let backtotop = select('.back-to-top')
+  if (backtotop) {
+    const toggleBacktotop = () => {
+      if (window.scrollY > 100) {
+        backtotop.classList.add('active')
+      } else {
+        backtotop.classList.remove('active')
+      }
+    }
+    window.addEventListener('load', toggleBacktotop)
+    onscroll(document, toggleBacktotop)
+  }
+
+  /**
+   * Initiate tooltips
+   */
+  var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+  var tooltipList = tooltipTriggerList.map(function(tooltipTriggerEl) {
+    return new bootstrap.Tooltip(tooltipTriggerEl)
+  })
+
+  /**
+   * Initiate quill editors
+   */
+  if (select('.quill-editor-default')) {
+    new Quill('.quill-editor-default', {
+      theme: 'snow'
+    });
+  }
+
+  if (select('.quill-editor-bubble')) {
+    new Quill('.quill-editor-bubble', {
+      theme: 'bubble'
+    });
+  }
+
+  if (select('.quill-editor-full')) {
+    new Quill(".quill-editor-full", {
+      modules: {
+        toolbar: [
+          [{
+            font: []
+          }, {
+            size: []
+          }],
+          ["bold", "italic", "underline", "strike"],
+          [{
+              color: []
+            },
+            {
+              background: []
+            }
+          ],
+          [{
+              script: "super"
+            },
+            {
+              script: "sub"
+            }
+          ],
+          [{
+              list: "ordered"
+            },
+            {
+              list: "bullet"
+            },
+            {
+              indent: "-1"
+            },
+            {
+              indent: "+1"
+            }
+          ],
+          ["direction", {
+            align: []
+          }],
+          ["link", "image", "video"],
+          ["clean"]
+        ]
+      },
+      theme: "snow"
+    });
+  }
+
+  /**
+   * Initiate TinyMCE Editor
+   */
+  const useDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches;
+  const isSmallScreen = window.matchMedia('(max-width: 1023.5px)').matches;
+
+  tinymce.init({
+    selector: 'textarea.tinymce-editor',
+    plugins: 'preview importcss searchreplace autolink autosave save directionality code visualblocks visualchars fullscreen image link media template codesample table charmap pagebreak nonbreaking anchor insertdatetime advlist lists wordcount help charmap quickbars emoticons',
+    editimage_cors_hosts: ['picsum.photos'],
+    menubar: 'file edit view insert format tools table help',
+    toolbar: 'undo redo | bold italic underline strikethrough | fontfamily fontsize blocks | alignleft aligncenter alignright alignjustify | outdent indent |  numlist bullist | forecolor backcolor removeformat | pagebreak | charmap emoticons | fullscreen  preview save print | insertfile image media template link anchor codesample | ltr rtl',
+    toolbar_sticky: true,
+    toolbar_sticky_offset: isSmallScreen ? 102 : 108,
+    autosave_ask_before_unload: true,
+    autosave_interval: '30s',
+    autosave_prefix: '{path}{query}-{id}-',
+    autosave_restore_when_empty: false,
+    autosave_retention: '2m',
+    image_advtab: true,
+    link_list: [{
+        title: 'My page 1',
+        value: 'https://www.tiny.cloud'
+      },
+      {
+        title: 'My page 2',
+        value: 'http://www.moxiecode.com'
+      }
+    ],
+    image_list: [{
+        title: 'My page 1',
+        value: 'https://www.tiny.cloud'
+      },
+      {
+        title: 'My page 2',
+        value: 'http://www.moxiecode.com'
+      }
+    ],
+    image_class_list: [{
+        title: 'None',
+        value: ''
+      },
+      {
+        title: 'Some class',
+        value: 'class-name'
+      }
+    ],
+    importcss_append: true,
+    file_picker_callback: (callback, value, meta) => {
+      /* Provide file and text for the link dialog */
+      if (meta.filetype === 'file') {
+        callback('https://www.google.com/logos/google.jpg', {
+          text: 'My text'
         });
+      }
+
+      /* Provide image and alt text for the image dialog */
+      if (meta.filetype === 'image') {
+        callback('https://www.google.com/logos/google.jpg', {
+          alt: 'My alt text'
+        });
+      }
+
+      /* Provide alternative source and posted for the media dialog */
+      if (meta.filetype === 'media') {
+        callback('movie.mp4', {
+          source2: 'alt.ogg',
+          poster: 'https://www.google.com/logos/google.jpg'
+        });
+      }
+    },
+    templates: [{
+        title: 'New Table',
+        description: 'creates a new table',
+        content: '<div class="mceTmpl"><table width="98%%"  border="0" cellspacing="0" cellpadding="0"><tr><th scope="col"> </th><th scope="col"> </th></tr><tr><td> </td><td> </td></tr></table></div>'
+      },
+      {
+        title: 'Starting my story',
+        description: 'A cure for writers block',
+        content: 'Once upon a time...'
+      },
+      {
+        title: 'New list with dates',
+        description: 'New List with dates',
+        content: '<div class="mceTmpl"><span class="cdate">cdate</span><br><span class="mdate">mdate</span><h2>My List</h2><ul><li></li><li></li></ul></div>'
+      }
+    ],
+    template_cdate_format: '[Date Created (CDATE): %m/%d/%Y : %H:%M:%S]',
+    template_mdate_format: '[Date Modified (MDATE): %m/%d/%Y : %H:%M:%S]',
+    height: 600,
+    image_caption: true,
+    quickbars_selection_toolbar: 'bold italic | quicklink h2 h3 blockquote quickimage quicktable',
+    noneditable_class: 'mceNonEditable',
+    toolbar_mode: 'sliding',
+    contextmenu: 'link image table',
+    skin: useDarkMode ? 'oxide-dark' : 'oxide',
+    content_css: useDarkMode ? 'dark' : 'default',
+    content_style: 'body { font-family:Helvetica,Arial,sans-serif; font-size:16px }'
+  });
+
+  /**
+   * Initiate Bootstrap validation check
+   */
+  var needsValidation = document.querySelectorAll('.needs-validation')
+
+  Array.prototype.slice.call(needsValidation)
+    .forEach(function(form) {
+      form.addEventListener('submit', function(event) {
+        if (!form.checkValidity()) {
+          event.preventDefault()
+          event.stopPropagation()
+        }
+
+        form.classList.add('was-validated')
+      }, false)
+    })
+
+  /**
+   * Initiate Datatables
+   */
+  const datatables = select('.datatable', true)
+  datatables.forEach(datatable => {
+    new simpleDatatables.DataTable(datatable, {
+      perPageSelect: [5, 10, 15, ["All", -1]],
+      columns: [{
+          select: 2,
+          sortSequence: ["desc", "asc"]
+        },
+        {
+          select: 3,
+          sortSequence: ["desc"]
+        },
+        {
+          select: 4,
+          cellClass: "green",
+          headerClass: "red"
+        }
+      ]
     });
-/*----------------------------------------*/
-/* 25. Zoom Product Venobox
-/*----------------------------------------*/
-    $('.venobox').venobox({
-        spinner:'wave',
-        spinColor:'#cb9a00',
-    });
-/*----------------------------------------*/
-/* 26. WOW
-/*----------------------------------------*/
-    new WOW().init();
-})(jQuery);
-/*----------------------------------------------------------------------------------------------------*/
-/*------------------------------------------> The End <-----------------------------------------------*/
-/*----------------------------------------------------------------------------------------------------*/
+  })
+
+  /**
+   * Autoresize echart charts
+   */
+  const mainContainer = select('#main');
+  if (mainContainer) {
+    setTimeout(() => {
+      new ResizeObserver(function() {
+        select('.echart', true).forEach(getEchart => {
+          echarts.getInstanceByDom(getEchart).resize();
+        })
+      }).observe(mainContainer);
+    }, 200);
+  }
+
+})();
