@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\backend\CategoryController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
@@ -14,14 +15,22 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
+//FRONTEND ROUTE START
 
 Route::get('/', function () {
     return view('frontend.home');
 });
 
+
 Route::get('contact', function () {
     return view('frontend.contact');
 });
+
+Route::get('about', function () {
+    return view('frontend.about');
+});
+
+//FRONTEND ROUTE END
 
 Route::get('/dashboard', function () {
     return view('backend.dashboard');

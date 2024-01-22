@@ -1781,6 +1781,9 @@ textarea:focus {
 .hb-menu nav > ul > li:nth-child(n+5) > a::after {
 	content: none;
 }
+.hb-menu nav > ul > li:nth-child(1) > a::after {
+	content: none;
+}
 .hb-menu nav > ul > li:hover  a::after {
 	transform: rotate(180deg);
 }

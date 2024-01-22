@@ -2,6 +2,6 @@
 
 <body>
 
-    @yield('home')
+    @yield('content')
 
 @include('frontend.layouts.homeFooterLink')
