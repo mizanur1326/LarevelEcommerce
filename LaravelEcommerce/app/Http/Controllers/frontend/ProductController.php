@@ -4,9 +4,10 @@ namespace App\Http\Controllers\frontend;
 
 use App\Http\Controllers\Controller;
 use App\Models\Category;
+use App\Models\Product;
 use Illuminate\Http\Request;
 
-class CategoryController extends Controller
+class ProductController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,6 +15,7 @@ class CategoryController extends Controller
     public function index()
     {
         $data['category'] = Category::All();
+        $data['products'] = Product::All();
         return view('frontend.home', $data);
     }
 

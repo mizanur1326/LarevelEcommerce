@@ -35,7 +35,8 @@ Route::get('about', function () {
 //FRONTEND ROUTE END
 
 // frontend controllers
-Route::get('/', [FrontendCategoryController::class, 'index']) ;
+Route::get('/', [ProductController::class, 'index']) ;
+// Route::get('/', [FrontendCategoryController::class, 'index']) ;
 
 Route::get('/dashboard', function () {
     return view('backend.dashboard');
