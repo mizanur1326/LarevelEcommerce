@@ -32,6 +32,26 @@ Route::get('about', function () {
     return view('frontend.about');
 });
 
+Route::get('login-register', function () {
+    return view('frontend.login-register');
+});
+
+Route::get('checkout', function () {
+    return view('frontend.checkout');
+});
+
+Route::get('compare', function () {
+    return view('frontend.compare');
+});
+
+Route::get('wishlist', function () {
+    return view('frontend.wishlist');
+});
+
+Route::get('shopping-cart', function () {
+    return view('frontend.shopping-cart');
+});
+
 //FRONTEND ROUTE END
 
 // frontend controllers

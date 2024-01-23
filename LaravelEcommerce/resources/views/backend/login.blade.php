@@ -6,7 +6,7 @@
     <div class="container">
         <div class="login-form-title text-center">
             <figure class="login-page-logo">
-                    <a class="navbar-brand mr-0 p-0" href="index.html"><img src="./assets/images/sencare-logo2.png" alt="" class="img-fluid"></a>
+                    <a class="navbar-brand mr-0 p-0" href="index.html"><img src="{{asset('assets/LoginAssets/images/sencare-logo2.png')}}" alt="" class="img-fluid"></a>
             </figure>
             <h2>Welcome Back !</h2>
         </div>
@@ -49,15 +49,15 @@
     </div>
 </section>
     <script src="https://code.jquery.com/jquery-1.12.1.min.js"></script>
-    <script src="assets/js/animations.js"></script>
-    <script src="assets/js/bootstrap.min.js"></script>
-    <script src="assets/js/jquery-3.6.0.min.js"></script>
-    <script src="assets/js/popper.min.js"></script>
-    <script src="assets/js/custom-script.js"></script>
-    <script src="assets/js/owl.carousel.js"></script>
+    <script src="{{asset('assets/LoginAssets/js/animations.js')}}"></script>
+    <script src="{{asset('assets/LoginAssets/js/bootstrap.min.js')}}"></script>
+    <script src="{{asset('assets/LoginAssets/js/jquery-3.6.0.min.js')}}"></script>
+    <script src="{{asset('assets/LoginAssets/js/popper.min.js')}}"></script>
+    <script src="{{asset('assets/LoginAssets/js/custom-script.js')}}"></script>
+    <script src="{{asset('assets/LoginAssets/js/owl.carousel.js')}}"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script src="assets/js/text-animations.js"></script>
-    <script src="./assets/js/carousel.js"></script>
+    <script src="{{asset('assets/LoginAssets/js/text-animations.js')}}"></script>
+    <script src="{{asset('assets/LoginAssets/js/carousel.js')}}"></script>
 </body>
 </html>
     

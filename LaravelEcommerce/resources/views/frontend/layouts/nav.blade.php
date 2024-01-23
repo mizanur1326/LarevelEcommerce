@@ -326,13 +326,13 @@
                                                             <li><a href="blog-gallery-format.html">Blog Gallery Format</a></li>
                                                         </ul>
                                                     </li> --}}
-                                                    <li><a href="#">My Account</a>
+                                                    <li>
                                                         <ul>
-                                                            <li><a href="login-register.html">My Account</a></li>
-                                                            <li><a href="checkout.html">Checkout</a></li>
-                                                            <li><a href="compare.html">Compare</a></li>
-                                                            <li><a href="wishlist.html">Wishlist</a></li>
-                                                            <li><a href="shopping-cart.html">Shopping Cart</a></li>
+                                                            <li><a href="/login-register">My Account</a></li>
+                                                            <li><a href="/checkout">Checkout</a></li>
+                                                            <li><a href="/compare">Compare</a></li>
+                                                            <li><a href="/wishlist">Wishlist</a></li>
+                                                            <li><a href="/shopping-cart">Shopping Cart</a></li>
                                                         </ul>
                                                     </li>
                                                     {{-- <li><a href="index.html">Other Pages 2</a>

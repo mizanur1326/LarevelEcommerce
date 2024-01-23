@@ -220,4 +220,4 @@
 @include('frontend.layouts.footer')
 
         
-@include('frontend.layouts.homeFooterLink');
+@include('frontend.layouts.homeFooterLink')
